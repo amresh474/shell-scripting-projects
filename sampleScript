@@ -1,0 +1,73 @@
+
+List some of the  commonly used shell commands
+	ls  —> to list the file  
+	cd 
+	mkdir —> create directory 
+	Touch —> create file
+	vim —> to open the file 
+	cp —> copy commond 
+	mv —> move commond
+	grep  —> filter 
+	ps -ef  —>  list the process in detail 
+	ps -ef| awk -F" " '{print $2}’ —> only process id print 
+	curl https://dummyjson.com/products —> it is used to call the url 
+	curl https://dummyjson.com/products | grep rating 
+ man curl -- > know about command 
+
+#################################
+# Author : Amresh kumar
+# Date : 16/03/2024
+#
+# This script output the if else condition
+#
+# Version : 1
+#
+#########################################
+
+set -x  # debug mode
+set -e  # exit the script when there is an error
+set -o pipefail
+
+a=10
+b=20
+if [ $a > $b ]
+then
+    echo "a is greater than b"
+
+else
+   echo " b is greater than a"
+fi
+  
+Q. write a shell script to print number divided by 3 & 5 and not 15
+Simplescript.sh
+
+#!/bin/bash
+# seabang
+##############################
+# Author : Amresh kumar
+# date : 16/03/2024
+#
+# version : 1
+########################
+
+# divisible by 3 , divisible by 5, not 3*5 =15
+
+for i in {1..100}; do
+if ([ `expr $i % 3` == 0 ] || [ `expr $i % 5` == 0 ]) && [ `expr $i % 15` != 0 ];
+then
+        echo $i
+fi;
+done
+
+Q. write a script to print number of “s” in Mississippi
+
+#!/bin/bash
+set -x # debug mode
+x=mississipi
+
+grep -o "s" <<<"$x" | wc -l
+
+Q. how to open a read only file 
+  vim -r test.txt
+
+
